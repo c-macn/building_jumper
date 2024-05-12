@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhyiuv6c37a5o"]
+
+[ext_resource type="Texture2D" uid="uid://ckg3r7og12byf" path="res://gerry.png" id="1_vm2vs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kvmc"]
+size = Vector3(2.68805, 2.87024, 1)
+
+[node name="Gerry" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+motion_mode = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_vm2vs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_0kvmc")
