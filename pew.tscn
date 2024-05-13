@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5i8wlj3dljjk"]
+
+[ext_resource type="Script" path="res://Pew.gd" id="1_fmc8u"]
+[ext_resource type="PackedScene" uid="uid://bddmj73y1xgp0" path="res://bullet.blend" id="2_wvckp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tvfe"]
+
+[node name="Pew" type="Area3D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_fmc8u")
+
+[node name="bullet" parent="." instance=ExtResource("2_wvckp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7tvfe")

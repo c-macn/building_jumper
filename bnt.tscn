@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://xi37k6yf4nj8"]
+[gd_scene load_steps=4 format=3 uid="uid://xi37k6yf4nj8"]
 
 [ext_resource type="Texture2D" uid="uid://ffqx8qaomcxw" path="res://bnt.png" id="1_elw81"]
+[ext_resource type="Script" path="res://bnt.gd" id="1_o4qa0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hg066"]
 size = Vector3(0.616394, 1.55719, 1)
 
 [node name="BlackAndTan" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_o4qa0")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.180235)

@@ -1,25 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://sr4g1pdtxplt"]
+[gd_scene load_steps=5 format=3 uid="uid://sr4g1pdtxplt"]
 
 [ext_resource type="PackedScene" uid="uid://cj2bf8pcjgxoj" path="res://building_prototype.blend" id="1_j1cnq"]
 [ext_resource type="PackedScene" uid="uid://dhyiuv6c37a5o" path="res://gerry.tscn" id="2_ftb3k"]
 [ext_resource type="PackedScene" uid="uid://xi37k6yf4nj8" path="res://bnt.tscn" id="3_of8aa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53m2x"]
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.34902, 0.788235, 0.27451, 1)
 
 [node name="ProtoLevel" type="Node3D"]
 
 [node name="building_prototype" parent="." instance=ExtResource("1_j1cnq")]
 
 [node name="Gerry" parent="." instance=ExtResource("2_ftb3k")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.20886, 11.4264, -2.60141)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.20886, 99.6651, 1.41328)
+
+[node name="Camera3D" type="Camera3D" parent="Gerry"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.15684, 3.1031, 19.5266)
+current = true
+fov = 37.8493
 
 [node name="BnTSoldier" parent="." instance=ExtResource("3_of8aa")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.7748, 11.5351, -4.76716)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.7748, 103.462, 0.99255)
 
 [node name="BnTSoldier2" parent="." instance=ExtResource("3_of8aa")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41574, 11.5351, -4.76716)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41574, 103.462, 0.99255)
 
 [node name="BnTSoldier3" parent="." instance=ExtResource("3_of8aa")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.92462, 11.5351, -4.76716)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.92462, 103.462, 0.99255)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28728, 12.3035, 7.06108)
-current = true
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29761, -0.568416, 1.95865)
+material_override = SubResource("StandardMaterial3D_53m2x")
+use_collision = true
+size = Vector3(15, 1, 4.50439)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.893567, 0.448929, 0, -0.448929, 0.893567, 7.51237, 12.6499, 16.0405)
