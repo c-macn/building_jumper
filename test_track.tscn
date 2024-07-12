@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2crhiij5u50k"]
+
+[ext_resource type="PackedScene" uid="uid://dhyiuv6c37a5o" path="res://gerry.tscn" id="1_c0snc"]
+[ext_resource type="PackedScene" uid="uid://xi37k6yf4nj8" path="res://bnt.tscn" id="2_5q1r1"]
+
+[sub_resource type="Curve3D" id="Curve3D_u5r6k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -1.5, 0, 0, 0, 0, 0, 0, 0, 0, -1.5, 0, 0, 0, 0, 0, 0, -3.73234, -0.688545, -2.16024, 0, 0, 0, 0, 0, 0, 0, 0, -10),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vce5n"]
+albedo_color = Color(0.407843, 0.0745098, 0.34902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6ocm"]
+albedo_color = Color(0.407843, 0.0745098, 0.34902, 1)
+
+[node name="TestTrack" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_u5r6k")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1.48926)
+rotation_mode = 4
+use_model_front = true
+
+[node name="GameCamera" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0498661, -0.0922833, -1.53593)
+current = true
+
+[node name="Gerry" parent="Path3D/PathFollow3D" instance=ExtResource("1_c0snc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0498661, -0.561949, -1.53593)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.143918, -2.40735, -9.1805)
+size = Vector3(13.4919, 0.841675, 24.2078)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82163, -1.46058, -5.3313)
+material_override = SubResource("StandardMaterial3D_vce5n")
+material_overlay = SubResource("StandardMaterial3D_s6ocm")
+size = Vector3(4.69775, 1, 1)
+
+[node name="BlackAndTan" parent="." instance=ExtResource("2_5q1r1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.744474, -10.7649)
