@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://beaiyixjropwp"]
+
+[ext_resource type="PackedScene" uid="uid://bjvulgngp4orp" path="res://player.tscn" id="1_f0mb6"]
+[ext_resource type="Texture2D" uid="uid://bvt5igi02xi34" path="res://enemy.png" id="2_1i0yl"]
+
+[node name="ProtoLevel2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_f0mb6")]
+position = Vector2(0, 142)
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(2, 32)
+texture = ExtResource("2_1i0yl")
