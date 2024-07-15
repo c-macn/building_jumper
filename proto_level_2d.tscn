@@ -6,6 +6,10 @@
 [node name="ProtoLevel2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 61)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_f0mb6")]
 position = Vector2(0, 142)

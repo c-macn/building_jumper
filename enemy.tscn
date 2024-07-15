@@ -16,3 +16,6 @@ texture = ExtResource("1_3s6ql")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -8)
 shape = SubResource("RectangleShape2D_nn18i")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true

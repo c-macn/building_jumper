@@ -15,6 +15,11 @@ func _spawn_enemy() -> void:
 	can_spawn = false
 	var new_path := path.instantiate()
 	var new_enemy := enemies.instantiate()
+
+	# Just hoping the player is the only one
+	var player_node := get_parent().find_children("Player")[0]
+	new_enemy.target = player_node
+
 	# TODO: Create a dynamic way to assign paths
 	add_child(new_path)
 	new_path.get_child(0).add_child(new_enemy)
