@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://peoqcenxl46d"]
 
-[ext_resource type="Texture2D" uid="uid://cfq2ae5vygbdy" path="res://bullet.png" id="1_hd8c0"]
-[ext_resource type="Script" path="res://bullet.gd" id="1_he6en"]
+[ext_resource type="Texture2D" uid="uid://cfq2ae5vygbdy" path="res://Munitions/bullet.png" id="1_hd8c0"]
+[ext_resource type="Script" path="res://Munitions/bullet.gd" id="1_he6en"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vugp0"]
 radius = 4.0
