@@ -2,23 +2,20 @@ class_name Enemy
 extends CharacterBody2D
 ## Enemy node
 
+@export var movement_type: MovementType
 
-var bullet = preload('res://bullet.tscn')
+var bullet = preload('res://Munitions/bullet.tscn')
 var target: Player
 
-@onready var movement_path: PathFollow2D = get_parent()
 @onready var bullet_spawner: Marker2D = $BulletSpawner
 
 func _ready() -> void:
 	$ShootTimer.timeout.connect(self._shoot)
 
 
-func _physics_process(delta) -> void:
-	movement_path.set_progress(movement_path.get_progress() + 100 * delta)
-
-	# If at the end of the path kill the enemy
-	if movement_path.get_progress_ratio() == 1:
-		queue_free()
+func _physics_process(delta: float) -> void:
+	velocity = movement_type.get_movement_vector(100.0, delta)
+	move_and_collide(velocity * delta)
 
 
 func _shoot() -> void:

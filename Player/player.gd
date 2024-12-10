@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 ## Node for the player character
 
-var bullet = preload('res://bullet.tscn')
+var bullet = preload('res://Munitions/bullet.tscn')
 var can_fire := true
 
 @onready var bullet_spawners: Array[Marker2D] = [$BulletSpawnerLeft, $BulletSpawnerRight]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://beaiyixjropwp"]
 
-[ext_resource type="PackedScene" uid="uid://bjvulgngp4orp" path="res://Player/player.tscn" id="1_f0mb6"]
-[ext_resource type="PackedScene" uid="uid://35qmg03gseuc" path="res://Enemies/enemy_spawner.tscn" id="2_umwbu"]
+[ext_resource type="PackedScene" uid="uid://bjvulgngp4orp" path="res://Player/player.tscn" id="1_s8mfd"]
+[ext_resource type="PackedScene" uid="uid://35qmg03gseuc" path="res://Enemies/enemy_spawner.tscn" id="2_psa0v"]
 
 [node name="ProtoLevel2D" type="Node2D"]
 
@@ -11,8 +11,8 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_f0mb6")]
+[node name="Player" parent="." instance=ExtResource("1_s8mfd")]
 position = Vector2(0, 142)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("2_umwbu")]
+[node name="EnemySpawner" parent="." instance=ExtResource("2_psa0v")]
 position = Vector2(-82, -4)
